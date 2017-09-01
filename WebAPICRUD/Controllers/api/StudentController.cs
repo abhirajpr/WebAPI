@@ -25,6 +25,7 @@ namespace WebAPICRUD.Controllers.api
             else
                 return Ok("No students found");
         }
+
         public IHttpActionResult GetStudentById(int id)
         {
             Student student = new Student();

@@ -200,7 +200,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SampleCustomResult.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\api\SampleController.cs" />
     <Compile Include="Controllers\api\StudentController.cs" />
     <Compile Include="Controllers\mvc\StudentController.cs" />
     <Compile Include="Global.asax.cs">
