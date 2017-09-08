@@ -13,10 +13,10 @@ namespace WebAPICRUD.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class StudentEntities : DbContext
+    public partial class DBFirstEntities : DbContext
     {
-        public StudentEntities()
-            : base("name=StudentEntities")
+        public DBFirstEntities()
+            : base("name=DBFirstEntities")
         {
         }
     
@@ -25,8 +25,6 @@ namespace WebAPICRUD.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Student> Students { get; set; }
-
-        public System.Data.Entity.DbSet<WebAPICRUD.Models.Login> Logins { get; set; }
+        public virtual DbSet<Login> Logins { get; set; }
     }
 }
