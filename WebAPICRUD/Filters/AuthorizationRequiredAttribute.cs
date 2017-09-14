@@ -27,7 +27,7 @@ namespace WebAPICRUD.Filters
                 }
                 else
                 {
-                    filterContext.Response = new HttpResponseMessage(HttpStatusCode.Unauthorized);
+                    filterContext.Response = new HttpResponseMessage(HttpStatusCode.OK);
                 }
                 base.OnActionExecuting(filterContext);
             }

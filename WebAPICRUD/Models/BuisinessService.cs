@@ -36,17 +36,17 @@ namespace WebAPICRUD.Models
 
         public bool ValidateToken(string tokenValue)
         {
-            Login tk = new Login();
-            DBFirstEntities db = new DBFirstEntities();
-            tk = db.Logins.Where(x => x.AuthToken == tokenValue ).FirstOrDefault();
             
-            if (tk.ExpireOn > DateTime.Now)
+            DBFirstEntities db = new DBFirstEntities();
+            Login user = new Login();
+            user = db.Logins.Where(u => u.AuthToken == tokenValue && u.ExpireOn > DateTime.Now).FirstOrDefault();
+            if (user != null)
             {
-                return false;
+                user.ExpireOn = DateTime.Now.AddMinutes(5);
+                db.SaveChanges();
+                return true;
             }
-            tk.ExpireOn = DateTime.Now.AddMinutes(10);
-            db.SaveChanges();
-            return true;
+            return false;
         }
     
 
